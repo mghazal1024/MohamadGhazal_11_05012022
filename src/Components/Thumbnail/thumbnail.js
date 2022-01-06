@@ -1,14 +1,17 @@
 import React from 'react'
 import './thumbnail.scss'
 
+import { Link } from 'react-router-dom'
+
 class Thumbnail extends React.Component {
     render() {
-        const { title } = this.props
+        const { title, cover, id } = this.props
         return (
             <li className='thumbnail'>
-                <a className='thumbnail__link'>
+                <Link className='thumbnail__link' to={`/${id}`}>
                     <p className='thumbnail__title'>{title}</p>
-                </a>
+                    <img className='thumbnail__cover' src={cover} alt={title} />
+                </Link>
             </li>
         )
     }

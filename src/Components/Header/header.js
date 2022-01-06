@@ -1,6 +1,7 @@
 import React from 'react';
 import './header.scss';
 import logo from '../../images/LOGO.svg'
+import {Link} from 'react-router-dom'
 
 class Header extends React.Component {
     render() {
@@ -10,7 +11,7 @@ class Header extends React.Component {
                     <img src={logo} alt="logo" />
                 </div>
                 <nav className='main-nav'>
-                    <li><a href='#'>Accueil</a></li>
+                    <li><Link to='/'>Accueil</Link></li>
                     <li><a href='#'>A Propos</a></li>
                 </nav>
             </header>

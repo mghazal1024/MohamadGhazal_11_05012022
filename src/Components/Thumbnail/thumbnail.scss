@@ -10,9 +10,11 @@
         align-items: flex-end;
         padding: 20px;
         box-sizing: border-box;
-        background-color: $maincolor;
+        // background-color: $maincolor;
         position: relative;
         border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
         &::before {
             content: "";
             width: 100%;
@@ -22,6 +24,13 @@
             left: 0;
             position: absolute;
             border-radius: 10px;
+            z-index: 1;
+        }
+        &:hover {
+            .thumbnail__cover {
+                transform: scale(1.1);
+                transition: $basictransition;
+            }
         }
     }
     &__title {
@@ -29,6 +38,16 @@
         font-size: 1rem;
         color: white;
         margin: 0;
-        z-index: 1;
+        z-index: 2;
+    }
+    &__cover {
+        position: absolute;
+        // mix-blend-mode: multiply;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: $basictransition;
     }
 }
