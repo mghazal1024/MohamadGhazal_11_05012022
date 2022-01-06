@@ -1,0 +1,19 @@
+root {
+    font-size: 16px;
+}
+
+$mainfont : 'Montserrat', sans-serif;
+$maincolor : #FF6060;
+$backcolor: #F6F6F6;
+
+h1 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.page-content {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+    // background-color: red;
+}

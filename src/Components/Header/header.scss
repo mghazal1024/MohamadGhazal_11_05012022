@@ -1,0 +1,29 @@
+@import '../../base';
+
+header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content:space-between;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+.main-nav {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    li {
+        margin: 0 25px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+        a {
+            font-size: 1.5rem;
+            color: $maincolor;
+            font-weight: 400;
+            text-decoration: none;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@import '../../base';
+
+.listings {
+    width: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    background-color: $backcolor;
+    border-radius: 25px;
+    margin: 50px 0;
+    &__list {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 60px;
+        row-gap: 60px;
+        list-style: none;
+        box-sizing: border-box;
+        padding: 0;
+    }
+}
