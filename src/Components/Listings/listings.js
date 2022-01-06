@@ -4,15 +4,17 @@ import Thumbnail from '../Thumbnail/thumbnail'
 
 class Listings extends React.Component {
     render() {
+        const { listingsData } = this.props;
         return (
             <section className='listings'>
                 <ul className='listings__list'>
-                    <Thumbnail></Thumbnail>
-                    <Thumbnail></Thumbnail>
-                    <Thumbnail></Thumbnail>
-                    <Thumbnail></Thumbnail>
-                    <Thumbnail></Thumbnail>
-                    <Thumbnail></Thumbnail>
+                    {listingsData.map( listing => {
+                        return (
+                            <Thumbnail
+                                title = {listing.title}
+                            ></Thumbnail>
+                        )
+                    })}
                 </ul>
             </section>
         )
