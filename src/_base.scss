@@ -9,12 +9,23 @@ $basictransition: 200ms ease-in-out;
 
 h1 {
     font-size: 3rem;
+    line-height: 140%;
     font-weight: 400;
+    color: $maincolor;
+    padding: 0;
+    margin: 0;
+}
+p {
+    font-size: 1.125rem;
+    line-height: 140%;
+    color: $maincolor;
+    padding: 0;
+    margin: 0;
 }
 
 .page-content {
     max-width: 1240px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px 50px 20px;
     // background-color: red;
 }

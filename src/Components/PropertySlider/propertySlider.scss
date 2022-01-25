@@ -1,0 +1,51 @@
+@import '../../base';
+
+body {
+    box-sizing: border-box;
+}
+.property-slider {
+    width: 100%;
+    max-width: 1240px;
+    box-sizing: border-box;
+    position: relative;
+    &__list {
+        list-style: none;
+        width: 100%;
+        height: 425px;
+        position: relative;
+        padding: 0;
+        border-radius: 25px;
+        overflow: hidden;
+    }
+    &__list-item {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
+
+.prev-arrow,
+.next-arrow {
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    z-index: 50;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.prev-arrow {
+    left: 25px;
+}
+.next-arrow {
+    right: 25px;
+}

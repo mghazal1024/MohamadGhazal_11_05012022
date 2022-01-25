@@ -1,0 +1,30 @@
+@import '../../base';
+
+.property-accordion {
+    width: calc(50% - 50px);
+    display: flex;
+    flex-wrap: wrap;
+    &__top {
+        width: 100%;
+        background-color: $maincolor;
+        padding: 13px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 10px;
+        p {
+            color: white;
+        }
+    }
+    &__content {
+        width: 100%;
+        background-color: $backcolor;
+        padding: 40px 20px;
+        border-radius: 10px;
+    }
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+}
