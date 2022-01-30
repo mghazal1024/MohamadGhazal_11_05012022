@@ -18,3 +18,26 @@
         padding: 0;
     }
 }
+
+
+@media screen and (max-width: 800px) {
+    .listings {
+        padding: 30px;
+        margin: 30px 0;
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 30px;
+            row-gap: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .listings {
+        padding: 0;
+        background-color: transparent;
+        &__list {
+            grid-template-columns: 1fr;
+        }
+    }
+}

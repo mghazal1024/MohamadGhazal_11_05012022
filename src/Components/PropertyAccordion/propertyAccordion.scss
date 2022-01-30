@@ -1,9 +1,12 @@
 @import '../../base';
 
 .property-accordion {
-    width: calc(50% - 50px);
+    // width: calc(50% - 25px);
+    width: 100%;
+    max-width: 1024px;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 30px;
     &__top {
         width: 100%;
         background-color: $maincolor;
@@ -12,19 +15,56 @@
         align-items: center;
         justify-content: space-between;
         border-radius: 10px;
+        cursor: pointer;
         p {
             color: white;
+        }
+        img {
+            transform: rotate(180deg);
+            transition: $basictransition;
         }
     }
     &__content {
         width: 100%;
         background-color: $backcolor;
-        padding: 40px 20px;
+        padding: 0 20px;
         border-radius: 10px;
+        height: 0;
+        overflow: hidden;
+        transition: $basictransition;
     }
     &__list {
         list-style: none;
         padding: 0;
         margin: 0;
+    }
+
+    &.open {
+        .property-accordion__content {
+            height: auto;
+            padding: 40px 20px;
+        }
+        .property-accordion__top {
+            img {
+                transform: rotate(0);
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .property-accordion {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .property-accordion {
+        &.open {
+            .property-accordion__content {
+                padding: 20px;
+            }
+        } 
     }
 }

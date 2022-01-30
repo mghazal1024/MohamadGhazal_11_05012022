@@ -1,20 +1,84 @@
 @import '../../base';
 
 .property-header {
+    display: grid;
+    grid-template-columns: 1fr 30%;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    grid-template-areas: "intro host" "tags rating";
+    box-sizing: border-box;
+    &__intro {
+        display: flex;
+        flex-direction: column;
+        grid-area: intro;
+        padding-right: 20px;
+    }
     &__host {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
+        grid-area: host;
         img {
             width: 64px;
             height: 64px;
             object-fit: cover;
             border-radius: 50%;
             margin-left: 20px;
+        }
+    }
+    &__tags {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        grid-area: tags;
+        padding-right: 20px;
+        li {
+            padding: 3px 30px;
+            background-color: $maincolor;
+            color: white;
+            border-radius: 10px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__rating {
+        grid-area: rating;
+        list-style: none;
+        display: flex;
+        padding: 0;
+        justify-content: flex-end;
+    }
+    &__rating-star {
+        margin: 0 5px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .property-header {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "intro intro" "tags tags" "rating host";
+        &__host {
+            img {
+                width: 32px;
+                height: 32px;
+            }
+        }
+        &__rating {
+            justify-content: flex-start;
+        }
+        &__tags {
+            li {
+                padding: 3px 10px;
+            }
+        }
+        &__rating-star {
+            max-width: 15px;
+            margin: 0 2px;
         }
     }
 }

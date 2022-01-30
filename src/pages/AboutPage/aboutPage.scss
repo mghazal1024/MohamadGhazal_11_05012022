@@ -1,0 +1,11 @@
+@import '../../base';
+
+.about-content {
+    &__section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+}

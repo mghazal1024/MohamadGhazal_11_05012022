@@ -1,0 +1,32 @@
+@import '../../base';
+
+.page-404 {
+    &__section {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 140px 50px;
+        h1 {
+            text-align: center;
+        }
+        a {
+            margin-top: 180px;
+            color: $maincolor;
+            text-decoration: underline;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .page-404 {
+        &__section {
+            padding: 50px 20px;
+            a {
+                margin-top: 50px;
+            }
+        }
+    }
+}

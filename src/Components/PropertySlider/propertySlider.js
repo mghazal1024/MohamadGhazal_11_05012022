@@ -8,35 +8,82 @@ class PropertySlider extends React.Component {
 
     constructor (props) {
         super (props)
-        // this.state = {
-        //     imageIndex: 0,
-        //     totalImages: this.props.pictures.length,
-        //     propertyImages: []
-        // }
+        this.state = {
+            totalImages: this.props.pictures.length,
+            propertyImages: [],
+            currentImage: 0
+        }
+
     }
 
-    // componentDidMount() {
-    //     this.setState({
-    //         propertyImages: [...document.querySelectorAll('property-slider__list-item')]
-    //     })
-    //     console.log(this.state.propertyImages)
+    componentDidMount() {
+        // this.setState({
+        //     propertyImages: [...document.querySelectorAll('.property-slider__list-item')],
+        // })
+        this.firstImage = setTimeout(() => {
+            this.setState({
+                propertyImages: [...document.querySelectorAll('.property-slider__list-item')],
+            })
+            this.state.propertyImages[this.state.currentImage].classList.add('selected')
+        }, 1000)
+    }
+
+    // componentWillUnmount() {
+    //     clearTimeout(this.firstImage)
     // }
+
+
+
+    handleNext = () => {
+        this.setState({
+            currentImage: this.state.currentImage + 1,
+        })
+        this.state.propertyImages.map(image => {
+            image.classList.remove('selected');
+        })
+        if(this.state.currentImage == this.state.totalImages - 1) {
+            this.setState({
+                currentImage: 0
+            })
+            this.state.propertyImages[0].classList.add('selected') 
+        } else {
+            this.state.propertyImages[this.state.currentImage + 1].classList.add('selected')    
+        }
+    }
+
+    handlePrev = () => {
+        this.setState({
+            currentImage: this.state.currentImage == 0 ? this.state.totalImages - 1 : this.state.currentImage - 1,
+        })
+        if(this.state.currentImage == 0) {
+            this.setState({
+                currentImage: this.state.totalImages - 1
+            })
+            this.state.propertyImages.map(image => {
+                image.classList.remove('selected');
+            })
+            this.state.propertyImages[this.state.totalImages - 1].classList.add('selected')
+        } else {
+            this.state.propertyImages.map(image => {
+                image.classList.remove('selected');
+            })
+            this.state.propertyImages[this.state.currentImage - 1].classList.add('selected')
+        }
+    }
     
     render() {
         const {pictures, title} = this.props;
-        // const { imageIndex, totalImages } = this.state;
+        const { totalImages, currentImage } = this.state;
 
-        // console.log(imageIndex);
-        // console.log(totalImages)
 
         return (
             <section className='property-slider'>
-                {/* { totalImages > 1
+                { totalImages > 1
                 ?   <>
-                    <img className='prev-arrow' src={prevArrow} alt="prev"/>
-                    <img className='next-arrow' src={nextArrow} alt="next"/>
+                    <img className='prev-arrow' onClick={this.handlePrev} src={prevArrow} alt="prev"/>
+                    <img className='next-arrow' onClick={this.handleNext} src={nextArrow} alt="next"/>
                     </>
-                : ""} */}
+                : ""}
 
                 <ul className='property-slider__list'>
                     {pictures.map((picture, i) => {
@@ -47,6 +94,10 @@ class PropertySlider extends React.Component {
                         )
                     })}
                 </ul>
+
+                <div className='property-slider__count'>
+                    <p>{currentImage + 1}/{totalImages}</p>
+                </div>
             </section>
         )
     }

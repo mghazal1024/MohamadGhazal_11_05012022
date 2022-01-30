@@ -7,9 +7,11 @@ import Banner from './Components/Banner/banner';
 import Listings from './Components/Listings/listings';
 import React from 'react';
 
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
 import Homepage from './Components/Homepage/homepage';
-import PropertyPage from './Components/PropertyPage/propertyPage';
+import PropertyPage from './pages/PropertyPage/propertyPage'
+import AboutPage from './pages/AboutPage/aboutPage'
+import Page404 from './pages/Page404/page404';
 
 
 
@@ -23,6 +25,8 @@ class App extends React.Component {
     }
   }
   
+
+
   render() {
     return (
       <Router>
@@ -51,6 +55,14 @@ class App extends React.Component {
                 />
               )
             })}
+            <Route
+              path='/a-propos'
+              element = {
+                <AboutPage></AboutPage>
+              }
+            />
+            <Route path="/404" element={<Page404></Page404>} />
+            <Route path="*" element={<Navigate replace to="/404" />} />
           </Routes>
         </main>
       </Router>

@@ -5,7 +5,18 @@ import chevron from '../../images/chevron.svg'
 class PropertyAccordion extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            isOpen: false
+        }
+        this.handleOpen = this.handleOpen.bind(this)
     }
+
+    handleOpen = () => {
+        this.setState( prevState => ({
+            isOpen: !prevState.isOpen
+        }))
+    }
+
     render() {
         const {title, content} = this.props;
 
@@ -27,8 +38,8 @@ class PropertyAccordion extends React.Component {
             }
         }
         return (
-            <section className='property-accordion'>
-                <div className='property-accordion__top'>
+            <section className={`property-accordion ${this.state.isOpen ? 'open' : '' }`}>
+                <div className='property-accordion__top' onClick={this.handleOpen}>
                     <p>{title}</p>
                     <img src={chevron} alt="open accordion" />
                 </div>

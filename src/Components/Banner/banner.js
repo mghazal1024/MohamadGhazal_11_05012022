@@ -1,14 +1,17 @@
 import React from 'react';
 import './banner.scss';
 
-import bannerImage from '../../images/banner-image.jpg'
-
 class Banner extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
     render() {
+        const { bannerImage, bannerText } = this.props;
         return (
             <section className='banner'>
                 <div className='banner__content'>
-                    <h1>Chez vous, partout et ailleurs</h1>
+                    <h1 className='white'>{bannerText}</h1>
                 </div>
                 <img className='banner__img' src={bannerImage} alt="image" />
             </section>

@@ -8,7 +8,7 @@
     justify-content: center;
     position: relative;
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 10px auto;
     background-color: black;
     border-radius: 25px;
     &__content {
@@ -21,6 +21,7 @@
         align-items: center;
         justify-content: center;
         z-index: 1;
+        box-sizing: border-box;
         h1 {
             color: white;
             font-family: $mainfont;
@@ -33,5 +34,19 @@
         object-fit: cover;
         position: relative;
         opacity: .7;
+        min-height: 220px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .banner {
+        border-radius: 10px;
+        &__content {
+            padding: 20px;
+        }
+        &__img {
+            min-height: 110px;
+            border-radius: 10px;
+        }
     }
 }
