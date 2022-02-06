@@ -17,9 +17,6 @@ class PropertySlider extends React.Component {
     }
 
     componentDidMount() {
-        // this.setState({
-        //     propertyImages: [...document.querySelectorAll('.property-slider__list-item')],
-        // })
         this.firstImage = setTimeout(() => {
             this.setState({
                 propertyImages: [...document.querySelectorAll('.property-slider__list-item')],
@@ -27,11 +24,6 @@ class PropertySlider extends React.Component {
             this.state.propertyImages[this.state.currentImage].classList.add('selected')
         }, 1000)
     }
-
-    // componentWillUnmount() {
-    //     clearTimeout(this.firstImage)
-    // }
-
 
 
     handleNext = () => {

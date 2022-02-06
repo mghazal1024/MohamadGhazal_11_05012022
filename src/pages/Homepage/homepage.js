@@ -1,6 +1,6 @@
 import React from 'react'
-import Banner from '../Banner/banner'
-import Listings from '../Listings/listings'
+import Banner from '../../Components/Banner/banner'
+import Listings from '../../Components/Listings/listings'
 import bannerImage from '../../images/banner-image.jpg'
 
 
