@@ -22,8 +22,6 @@ class App extends React.Component {
     }
   }
   
-
-
   render() {
     return (
       <Router>
@@ -31,7 +29,6 @@ class App extends React.Component {
         <main className='page-content'>
           <Routes>
             <Route index element={<Homepage listingsData={this.state.data} />}/>
-            {console.log(this.state.data)}
             {this.state.data.map( (listing, i) => {
               return (
                 <Route 
@@ -67,3 +64,7 @@ class App extends React.Component {
 
 }
 export default App;
+
+
+
+

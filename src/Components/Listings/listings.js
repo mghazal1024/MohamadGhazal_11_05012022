@@ -11,7 +11,6 @@ class Listings extends React.Component {
         return (
             <section className='listings'>
                 <ul className='listings__list'>
-                    {console.log(listingsData)}
                     {listingsData.map( (listing) => {
                         return (
                             <Thumbnail
@@ -29,3 +28,6 @@ class Listings extends React.Component {
 }
 
 export default Listings
+
+
+
